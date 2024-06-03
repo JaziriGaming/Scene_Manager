@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.470588, 0.960784, 0.345098, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="level_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -34,7 +34,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Grass Level"
 
-[node name="Button" type="Button" parent="."]
+[node name="change_scenes_btn" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,4 +50,38 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 text = "Change Level"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Clicks" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 85.0
+offset_right = 70.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Clicks: 0"
+
+[node name="clicks_btn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.5
+offset_top = 151.0
+offset_right = 81.5
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Click Me!"
+
+[connection signal="pressed" from="change_scenes_btn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="clicks_btn" to="." method="_on_clicks_btn_pressed"]
