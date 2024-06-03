@@ -24,3 +24,16 @@ func transfer_data():
 		for i in last_scene.scene_parameters:
 			if i in next_scene.scene_parameters:
 				next_scene.scene_parameters[i] = last_scene.scene_parameters[i]
+				
+
+
+
+func _on_animation_player_animation_finished(anim_name):
+	match anim_name:
+		"fade_in_overlay":
+			last_scene.cleanup()
+			next_scene.modulate.a = 255
+			anim_player.play("fade_out_overlay")
+			
+		"fade_out_overlay":
+			next_scene.enable_all_buttons()
