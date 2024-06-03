@@ -4,6 +4,9 @@ var scene_parameters = {
 	"clicks": 0
 }
 
+func setup_scene():
+	$Clicks.text = "Clicks: " + str(scene_parameters.clicks)
+
 func enable_all_buttons():
 	$Button.disabled = false
 
