@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmaeak0pg2uue"]
+[gd_scene load_steps=6 format=3 uid="uid://cmaeak0pg2uue"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Scene.gd" id="1_gjma4"]
+[ext_resource type="PackedScene" uid="uid://c8lm510po72wh" path="res://Scenes/grass_level.tscn" id="2_nrijq"]
 
 [sub_resource type="Animation" id="Animation_jqlvf"]
 resource_name = "fade_in_overlay"
@@ -55,11 +56,15 @@ libraries = {
 [node name="Overlay" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Overlay"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="grass_level" parent="." instance=ExtResource("2_nrijq")]
+layout_mode = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
