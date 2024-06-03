@@ -8,11 +8,13 @@ func setup_scene():
 	$Clicks.text = "Clicks: " + str(scene_parameters.clicks)
 
 func enable_all_buttons():
-	$Button.disabled = false
+	$change_scene_button.disabled = false
+	$clicks_btn.disabled = false
 
 	
 func disable_all_buttons():
-	$Button.disabled = true
+	$change_scene_button.disabled = true
+	$clicks_btn.disabled = true
 
 
 func _on_button_pressed():
